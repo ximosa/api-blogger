@@ -1,0 +1,21 @@
+<div id="navbar">
+    <a href="/">{{ title }}</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+  </div>
+<header class="blog-header">
+    <div class="blog-title">
+        <h4>{{ description }}</h4>
+    </div>
+</header>
+<section>
+<div class="blog-holder">
+    
+    <h2 class="blog-title"> Articulos</h2>
+    <div class="postItem" ng-repeat="(key, post) in posts.items | filter: dataFilter">
+        <a class="" href="#{{ key }}">
+        <h1 class="blog-holder-title">{{ posts.items[key].title }}</h1>
+        </a>
+    </div>
+</div>
+</section>
