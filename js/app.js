@@ -4,9 +4,13 @@
 	// configured routes
 	mainApp.config(function($stateProvider,$httpProvider) {
 		$stateProvider
-
+		.state('inicio',{
+			url:'/inicio',
+			templateUrl : 'pages/inicio.html',
+			controller  : 'blogController'
+		})
 			.state('blog',{
-		        url:'/',
+		        url:'/blog',
 				templateUrl : 'pages/blog.html',
 				controller  : 'blogController'
 		    })
@@ -20,12 +24,12 @@
   })
 
   .run(function($state){
-    $state.go('blog');
+    $state.go('inicio');
   });
 
 	mainApp.controller('blogController',function($scope,$state,Blog){
         $scope.title = 'WEBGAE';
-        $scope.description = 'Paquetes de imágenes de gran calidad';
+        $scope.description = 'Diseño y desrrollo web';
 	    $scope.posts = Blog.query();
 	});
 
@@ -41,7 +45,7 @@
 
 	mainApp.factory('Blog',function($resource){
     	return $resource(
-    		'https://www.googleapis.com/blogger/v3/blogs/8302465194712556712/posts?maxResults=500&key=AIzaSyD30gkIMXNzKlKsAHAA8ADKaYoFf_WKIOA',
+    		'https://www.googleapis.com/blogger/v3/blogs/2756493429384988662/posts?maxResults=500&key=AIzaSyD30gkIMXNzKlKsAHAA8ADKaYoFf_WKIOA',
     		{},
       		{query: { method: 'GET', isArray: false }}
     	);

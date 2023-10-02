@@ -33,35 +33,41 @@
 
     <!-- //// TITLE \\\\ -->
     <title>Angular-Blogger // Blog Template</title>
-
+    <link href="https://cdn.jsdelivr.net/npm/beercss@3.3.5/dist/cdn/beer.min.css" rel="stylesheet">
     <link href='css/style.css' rel="stylesheet">
 
     <!-- Angular -->
-    <script type="text/javascript" src="/js/angular.min.js"></script>
-    <script type="text/javascript" src="/js/angular-resource.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.0.1/dist/cdn/material-dynamic-colors.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.3.5/dist/cdn/beer.min.js"></script>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/angular-resource.min.js"></script>
     <script type="text/javascript" src="js/angular-ui-router.min.js"></script>
     <script src="js/app.js"></script>
 
 
   </head>
   <body>
+    <header class="secondary-container">
+      <nav>
+        <button class="circle transparent">
+          <i>menu</i>
+        </button>
+        <h5 class="max center-align"><a href="#">Webgae</a></h5>
+        
+        <a href="#/inicio">Inicio</a>
+        <a href="#/blog">Blog</a>
+        <button class="circle transparent">
+          <i>today</i>
+        </button>
+        <button class="circle transparent">
+          <i>more_vert</i>
+        </button>
+      </nav>
+    </header>
   
     <div ui-view></div>
-<footer class="footer">
-  <a href="/" style="color: aliceblue;">Webgae</a>     <span style="float: right;"> Api blogger v3</span>
-</footer>
+    <footer class="secondary-container">
+      <a href="#/inicio">Webgae</a>     <span style="float: right;"> Api blogger v3</span>
+    </footer>
   </body>
-  <script>
-    var prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
-var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.getElementById("navbar").style.top = "0";
-  } else {
-    document.getElementById("navbar").style.top = "-50px";
-  }
-  prevScrollpos = currentScrollPos;
-}
- 
-  </script>
 </html>

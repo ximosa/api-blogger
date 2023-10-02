@@ -1,2 +1,2 @@
 # api-blogger
-usar api blogger con angular
+usar api blogger
